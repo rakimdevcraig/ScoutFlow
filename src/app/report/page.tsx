@@ -14,20 +14,9 @@ import {
   loadLastReportSource,
   loadLastValidatedInput,
   saveLastReport,
-  type DisplayReportSource,
   type LastReportSource,
 } from "@/lib/report-store";
 import type { ScoutingInput, ScoutingReport } from "@/lib/types";
-
-function sourceBannerText(source: DisplayReportSource): string {
-  switch (source) {
-    case "openrouter":
-      return "This report was generated from your scouting input (OpenRouter / Nemotron 3 Nano).";
-    case "none":
-    default:
-      return "No saved report in this browser session yet. Generate one from Create report.";
-  }
-}
 
 function isLastReportSource(s: string): s is LastReportSource {
   return s === "openrouter";
@@ -46,8 +35,6 @@ function downloadTextFile(filename: string, text: string) {
 export default function ReportPage() {
   const [lastInput, setLastInput] = useState<ScoutingInput | null>(null);
   const [report, setReport] = useState<ScoutingReport | null>(null);
-  const [displaySource, setDisplaySource] =
-    useState<DisplayReportSource>("none");
   const [isRegenerating, setIsRegenerating] = useState(false);
   const [actionMessage, setActionMessage] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
@@ -58,10 +45,8 @@ export default function ReportPage() {
     const src = loadLastReportSource();
     if (stored && src === "openrouter") {
       setReport(stored);
-      setDisplaySource("openrouter");
     } else {
       setReport(null);
-      setDisplaySource("none");
     }
   }, []);
 
@@ -104,7 +89,6 @@ export default function ReportPage() {
       }
 
       setReport(data.report);
-      setDisplaySource("openrouter");
       saveLastReport(data.report, data.source);
       setActionMessage("Report regenerated.");
     } finally {
@@ -215,16 +199,6 @@ export default function ReportPage() {
             {actionError}
           </div>
         ) : null}
-
-        <div
-          className={`mt-4 rounded-lg border px-4 py-3 text-sm ${
-            displaySource === "openrouter"
-              ? "border-emerald-200 bg-emerald-50 text-emerald-950"
-              : "border-slate-200 bg-slate-50 text-slate-700"
-          }`}
-        >
-          <strong>Source:</strong> {sourceBannerText(displaySource)}
-        </div>
 
         {report ? (
           <article className="mt-10 space-y-12 rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">

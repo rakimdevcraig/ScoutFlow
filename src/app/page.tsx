@@ -41,15 +41,15 @@ export default function HomePage() {
   }, [form]);
 
   function setGame(patch: Partial<ScoutingFormState["game"]>) {
-    setForm((f) => ({ ...f, game: { ...f.game, ...patch } }));
+    setForm(f => ({ ...f, game: { ...f.game, ...patch } }));
   }
 
   function setOpponent(patch: Partial<ScoutingFormState["opponent"]>) {
-    setForm((f) => ({ ...f, opponent: { ...f.opponent, ...patch } }));
+    setForm(f => ({ ...f, opponent: { ...f.opponent, ...patch } }));
   }
 
   function setCoaching(patch: Partial<ScoutingFormState["coaching"]>) {
-    setForm((f) => ({ ...f, coaching: { ...f.coaching, ...patch } }));
+    setForm(f => ({ ...f, coaching: { ...f.coaching, ...patch } }));
   }
 
   function useDemoData() {
@@ -117,18 +117,11 @@ export default function HomePage() {
     <>
       <Header />
       <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-        <h1 className="text-2xl font-bold text-slate-900">Create scouting report</h1>
-        <p className="mt-2 text-sm text-slate-600">
-          Submit your notes to generate a structured report via OpenRouter (
-          <code className="rounded bg-slate-100 px-1 text-xs">
-            Nemotron 3 Nano
-          </code>
-          ). The server must have{" "}
-          <code className="rounded bg-slate-100 px-1 text-xs">
-            OPENROUTER_API_KEY
-          </code>{" "}
-          set in <code className="rounded bg-slate-100 px-1 text-xs">.env.local</code>
-          .
+        <h1 className="text-center text-2xl font-bold text-slate-900">
+          Create scouting report
+        </h1>
+        <p className="mt-2 text-center text-sm text-slate-600">
+          Submit your notes to generate a structured report
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm">
@@ -175,7 +168,7 @@ export default function HomePage() {
           />
           <PlayerTendenciesSection
             players={form.players}
-            onChangePlayers={(players) => setForm((f) => ({ ...f, players }))}
+            onChangePlayers={players => setForm(f => ({ ...f, players }))}
             fieldErrors={fieldErrors}
           />
           <CoachingObjectivesSection
