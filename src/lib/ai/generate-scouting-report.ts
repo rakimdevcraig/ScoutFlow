@@ -133,8 +133,8 @@ async function generateReportWithModel(
 }
 
 /**
- * Produces a validated ScoutingReport via OpenRouter (primary Gemma 31B free,
- * then fallback MiniMax M2.5 on transport failure only). Requires OPENROUTER_API_KEY.
+ * Produces a validated ScoutingReport via OpenRouter (primary Nemotron 3 Nano free,
+ * then fallback GPT OSS 20B on transport failure only). Requires OPENROUTER_API_KEY.
  */
 export async function generateScoutingReport(
   input: ScoutingInput,

@@ -1,8 +1,8 @@
-/** Default primary OpenRouter model id (see AI_PROMPTS.md). */
-export const OPENROUTER_MODEL = "google/gemma-4-31b-it:free";
+/** Default primary OpenRouter model id (see prompts/AI_PROMPTS.md). */
+export const OPENROUTER_MODEL = "nvidia/nemotron-3-nano-30b-a3b:free";
 
 /** Default fallback when the primary model’s HTTP path fails (override via OPENROUTER_FALLBACK_MODEL). */
-export const OPENROUTER_FALLBACK_MODEL = "minimax/minimax-m2.5:free";
+export const OPENROUTER_FALLBACK_MODEL = "openai/gpt-oss-20b:free";
 
 export function resolveOpenRouterPrimaryModel(): string {
   const fromEnv = process.env.OPENROUTER_MODEL?.trim();

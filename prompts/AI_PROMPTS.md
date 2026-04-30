@@ -4,8 +4,8 @@
 
 Use OpenRouter with:
 
-- Primary: `google/gemma-4-31b-it:free`
-- Fallback (transport errors only): `minimax/minimax-m2.5:free`
+- Primary: `nvidia/nemotron-3-nano-30b-a3b:free`
+- Fallback (transport errors only): `openai/gpt-oss-20b:free`
 
 ## Prompting Strategy
 

@@ -22,7 +22,7 @@ import type { ScoutingInput, ScoutingReport } from "@/lib/types";
 function sourceBannerText(source: DisplayReportSource): string {
   switch (source) {
     case "openrouter":
-      return "This report was generated from your scouting input (OpenRouter / Gemma).";
+      return "This report was generated from your scouting input (OpenRouter / Nemotron 3 Nano).";
     case "none":
     default:
       return "No saved report in this browser session yet. Generate one from Create report.";
@@ -239,7 +239,8 @@ export default function ReportPage() {
               <Link href="/" className="font-semibold text-court underline">
                 Create report
               </Link>{" "}
-              and submit the form. Reports are generated with OpenRouter (Gemma)
+              and submit the form. Reports are generated with OpenRouter
+              (Nemotron 3 Nano)
               and stored for this session only.
             </p>
           </div>

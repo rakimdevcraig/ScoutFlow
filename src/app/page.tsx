@@ -120,7 +120,9 @@ export default function HomePage() {
         <h1 className="text-2xl font-bold text-slate-900">Create scouting report</h1>
         <p className="mt-2 text-sm text-slate-600">
           Submit your notes to generate a structured report via OpenRouter (
-          <code className="rounded bg-slate-100 px-1 text-xs">Gemma</code>
+          <code className="rounded bg-slate-100 px-1 text-xs">
+            Nemotron 3 Nano
+          </code>
           ). The server must have{" "}
           <code className="rounded bg-slate-100 px-1 text-xs">
             OPENROUTER_API_KEY

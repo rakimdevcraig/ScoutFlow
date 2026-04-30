@@ -50,8 +50,6 @@ ScoutFlow helps coaches prepare faster and communicate more clearly by turning m
 - a concise player-facing brief
 - clear tactical priorities and matchup notes
 
-## MVP Inputs
-
 ### Game Context
 
 - opponentName
@@ -91,8 +89,6 @@ Example:
 - topGamePriority
 - riskLevel (conservative / balanced / aggressive)
 - outputTone (tactical / simple / motivational)
-
-## MVP Outputs
 
 ### Coach Report Sections
 
@@ -152,7 +148,7 @@ The app should include deterministic logic for:
 - Tailwind CSS
 - Zod
 - OpenRouter API
-- models: primary `google/gemma-4-31b-it:free`, fallback `minimax/minimax-m2.5:free`
+- models: primary `nvidia/nemotron-3-nano-30b-a3b:free`, fallback `openai/gpt-oss-20b:free`
 
 ## AI Integration Requirements
 

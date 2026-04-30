@@ -7,7 +7,7 @@ ScoutFlow is a weekend MVP for basketball coaches: enter opponent notes and gene
 - Basketball-only scouting form
 - Dynamic opponent player tendency notes
 - Zod validation for scouting input and report output
-- OpenRouter integration: primary `google/gemma-4-31b-it:free` (Gemma 31B), with automatic fallback to `minimax/minimax-m2.5:free` when the primary model’s HTTP request fails (optional overrides: `OPENROUTER_MODEL`, `OPENROUTER_FALLBACK_MODEL`)
+- OpenRouter integration: primary `nvidia/nemotron-3-nano-30b-a3b:free` (Nemotron 3 Nano), with automatic fallback to `openai/gpt-oss-20b:free` when the primary model’s HTTP request fails (optional overrides: `OPENROUTER_MODEL`, `OPENROUTER_FALLBACK_MODEL`)
 - Regenerate report, copy player brief, and download Markdown report
 
 ## Local setup

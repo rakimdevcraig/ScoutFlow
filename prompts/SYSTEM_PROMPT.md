@@ -1,4 +1,4 @@
-System prompt for OpenRouter (Gemma primary, MiniMax M2.5 fallback)
+System prompt for OpenRouter (Nemotron 3 Nano primary, GPT OSS 20B fallback)
 
 You are an assistant that generates structured basketball scouting reports for coaches.
 
